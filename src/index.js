@@ -10,7 +10,7 @@ import { createHttpLink } from 'apollo-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import { AUTH_TOKEN } from './constants';
 import { setContext } from 'apollo-link-context';
-import { BrowserRouter } from 'react-router-dom'etMainDefinition 
+import { BrowserRouter } from 'react-router-dom'
 import { split } from 'apollo-link'
 import { WebSocketLink } from 'apollo-link-ws'
 import { getMainDefinition } from 'apollo-utilities'
