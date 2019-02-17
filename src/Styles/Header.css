@@ -1,0 +1,46 @@
+
+.header {
+    padding: 1rem 1rem 1rem 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+}
+.logo {
+    font-family: 'Major Mono Display', monospace;
+    font-size: 2.5rem;
+}
+.menu-2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 1.5rem 1rem 1rem 1rem;
+    margin-left: 3rem;
+    text-transform: uppercase;
+    font-family: 'PT Mono', monospace;
+    font-size: 1.2rem;
+    
+}
+.new, .top, .search, .submit{
+    text-decoration: none;
+    color: #6A6A6A;
+}
+.login {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 2rem;
+    padding: 0rem 1rem 0rem 1rem;
+}
+.login-1, .logout-1 {
+    font-family: 'PT Mono', monospace;;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: #6A6A6A; 
+}

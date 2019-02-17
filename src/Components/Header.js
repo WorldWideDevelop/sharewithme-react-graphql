@@ -2,39 +2,37 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { withRouter } from "react-router";
 import { AUTH_TOKEN } from "../constants";
+import "../Styles/Header.css";
 
 class Header extends Component {
   render() {
     const authToken = localStorage.getItem(AUTH_TOKEN);
     return (
-      <div className="flex pa1 justify-between nowrap orange">
-        <div className="flex flex-fixed black">
-          <div className="fw7 mr1">Share With Me</div>
-          <Link to="/" className="mli no-underline black">
-            new
-          </Link>
-          <div className="ml1">|</div>
-          <Link to="/top" className="ml1 no-underline black">
-            top
-          </Link>
-          <div className="ml1">|</div>
-          <Link to="/search" className="ml1 no-underline black">
-            search
-          </Link>
-          {/* only loged in user: if authToken is not available */}
-          {authToken && (
-            <div className="flex">
-              <div className="ml1">|</div>
-              <Link to="/create" className="ml1 no-underline black">
+      <div className="header">
+        <div className="menu">
+          <div className="logo">Share With Me</div>
+          <div className="menu-2">
+            <Link to="/" className="new">
+              new
+            </Link>
+            <Link to="/top" className="top">
+              top
+            </Link>
+            <Link to="/search" className="search">
+              search
+            </Link>
+            {/* only loged in user: if authToken is not available */}
+            {authToken && (
+              <Link to="/create" className="submit">
                 submit
               </Link>
-            </div>
-          )}
+            )}
+          </div>
         </div>
-        <div className="flex flex-fixed">
+        <div className="login">
           {authToken ? (
             <div
-              className="ml1 pointer black"
+              className="logout-1"
               onClick={() => {
                 localStorage.removeItem(AUTH_TOKEN);
                 this.props.history.push(`/`);
@@ -43,7 +41,7 @@ class Header extends Component {
               logout
             </div>
           ) : (
-            <Link to="/login" className="ml1 no-underline black">
+            <Link to="/login" className="login-1">
               login
             </Link>
           )}
