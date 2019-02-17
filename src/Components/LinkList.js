@@ -87,6 +87,10 @@ class LinkList extends Component {
 
         store.writeQuery({ query: FEED_QUERY, data })
     }
+
+    _subscribeToNewLinks = async () => {
+        
+    }
     render() {
         return (
             <Query quert={FEED_QUERY} variables={this._getQueryVariables()}>

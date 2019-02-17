@@ -10,7 +10,10 @@ import { createHttpLink } from 'apollo-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import { AUTH_TOKEN } from './constants';
 import { setContext } from 'apollo-link-context';
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom'etMainDefinition 
+import { split } from 'apollo-link'
+import { WebSocketLink } from 'apollo-link-ws'
+import { getMainDefinition } from 'apollo-utilities'
 
 // connect ApolloClient instance with the GraphQL API 
 const httpLink = createHttpLink({
@@ -27,9 +30,30 @@ const authLink = setContext((_, { headers }) => {
     }
 })
 
+// WebSocket connection
+const wsLink = new WebSocketLink({
+    uri: `ws://localhost:4000t`,
+    options: {
+        reconnect: true,
+        connectionParams: {
+            authToken: localStorage.getItem(AUTH_TOKEN)
+        }
+    }
+})
+
+// proper routing of the requests and update the constructor call of ApolloClient
+const link = split(
+    ({ query }) => {
+        const { kind, operation } = getMainDefinition(query)
+        return kind === 'OperationDefinition' && operation === 'subscription'
+    },
+    wsLink,
+    authLink.concat(httpLink)
+)
+
 // instantiate ApolloClient 
 const client = new ApolloClient({
-    link: authLink.concat(httpLink),
+    link,
     cache: new InMemoryCache(),
 })
 
