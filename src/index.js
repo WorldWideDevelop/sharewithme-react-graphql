@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './Components/App';
-import './styles/index.css';
+import './Styles/index.css';
 // importing the reequired dependencies from the installed packages 
 import { ApolloProvider } from 'react-apollo';
 import { ApolloClient } from 'apollo-client';
