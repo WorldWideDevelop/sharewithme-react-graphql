@@ -17,7 +17,7 @@ import { getMainDefinition } from "apollo-utilities";
 
 // connect ApolloClient instance with the GraphQL API
 const httpLink = createHttpLink({
-  uri: "http://localhost:4000"
+  uri: "http://localhost:4000",
 });
 
 const authLink = setContext((_, { headers }) => {
@@ -32,7 +32,7 @@ const authLink = setContext((_, { headers }) => {
 
 // WebSocket connection
 const wsLink = new WebSocketLink({
-  uri: `ws://localhost:4000t`,
+  uri: `ws://localhost:4000`,
   options: {
     reconnect: true,
     connectionParams: {
