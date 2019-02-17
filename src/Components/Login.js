@@ -1,5 +1,24 @@
 import React, { Component } from "react";
 import { AUTH_TOKEN } from "../constants";
+import { Mutation } from 'react-apollo';
+import gql from 'graphql-tag';
+
+const SIGNUP_MUTATION = gql`
+    mutation SignupMutation($email: String!, $password: String!, $name: String!) {
+        signup(email: $email, password: $password, name: $name) {
+            token
+        }
+    }
+`
+
+const LOGIN_MUTATION = gql`
+    mutation LoginMutation($email: String!, $password: String!) {
+        login(email: $email, password: $password) {
+            token
+        }
+    }
+`
+
 
 class Login extends Component {
   state = {
@@ -47,9 +66,16 @@ class Login extends Component {
           />
         </div>
         <div className="flex mt3">
-          <div className="pointer mr2 button" onClick={() => this._confirm()}>
-            {login ? "login" : "create account"}
-          </div>
+          <Mutation 
+            mutation={login ? LOGIN_MUTATION : SIGNUP_MUTATION}
+            variables={{ email, password, name }}
+            onCompleted={date => this._confirm(date)}>
+            {mutation => (
+                <div className="pointer mr2 button" onClick={mutation}>
+                    {login ? 'login' : 'create account'}
+                </div>
+            )}
+            </Mutation>
           <div
             className="pointer button"
             onClick={() => this.setState({ login: !login })}
@@ -62,7 +88,11 @@ class Login extends Component {
   }
 
 //   the mutations for the login functionality 
-  _confirm = async () => {};
+  _confirm = async data => {
+      const { token } = this.state.login ? data.login : data.SIGNUP_MUTATION
+      this._saveUserData(token)
+      this.props.history.push(`/`)
+  };
 
   _saveUserData = token => {
     localStorage.setItem(AUTH_TOKEN, token);

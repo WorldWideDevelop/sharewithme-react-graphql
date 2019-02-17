@@ -1320,6 +1320,13 @@ apollo-client@^2.4.13:
     tslib "^1.9.3"
     zen-observable "^0.8.0"
 
+apollo-link-context@^1.0.14:
+  version "1.0.14"
+  resolved "https://registry.yarnpkg.com/apollo-link-context/-/apollo-link-context-1.0.14.tgz#6265eef49bedadddbbcff4026d04cd351094cd6c"
+  integrity sha512-l6SIN7Fwqhgg5C5eA8xSrt8gulHBmYTE3J4z5/Q2hP/8Kok0rQ/z5q3uy42/hkdYlnaktOvpz+ZIwEFzcXwujQ==
+  dependencies:
+    apollo-link "^1.2.8"
+
 apollo-link-dedup@^1.0.0:
   version "1.0.15"
   resolved "https://registry.yarnpkg.com/apollo-link-dedup/-/apollo-link-dedup-1.0.15.tgz#028148f1028e806a9ab2f4abf3bde9dc292565e9"
@@ -4385,7 +4392,7 @@ graphql-anywhere@^4.1.0-alpha.0:
     apollo-utilities "^1.1.3"
     tslib "^1.9.3"
 
-graphql-tag@^2.4.2:
+graphql-tag@^2.10.1, graphql-tag@^2.4.2:
   version "2.10.1"
   resolved "https://registry.yarnpkg.com/graphql-tag/-/graphql-tag-2.10.1.tgz#10aa41f1cd8fae5373eaf11f1f67260a3cad5e02"
   integrity sha512-jApXqWBzNXQ8jYa/HLkZJaVw9jgwNqZkywa2zfFn16Iv1Zb7ELNHkJaXHR7Quvd5SIGsy6Ny7SUKATgnu05uEg==
