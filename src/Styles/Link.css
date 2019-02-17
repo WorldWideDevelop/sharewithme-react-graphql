@@ -1,0 +1,17 @@
+.list-item-container {
+    display: flex;
+    padding: 0.4rem 0.3rem 0.3rem 0.3rem;
+}
+.list-item-container-1 {
+    padding: 0.5rem 0.6rem 0.5rem 0.5rem;
+    display: flex;
+}
+.number {
+    color: #6A6A6A;
+    font-family: 'Slabo 27px', serif;
+    padding: 0 0.5rem 0 0
+}
+.vote-arrow {
+    color: #6A6A6A;
+    margin-top: 0.7rem;
+}
