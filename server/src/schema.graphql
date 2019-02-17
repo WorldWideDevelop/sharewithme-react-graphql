@@ -2,6 +2,7 @@ scalar DateTime
 
 type Query {
   info: String!
+  # Retrieves all links from the backend
   feed(filter: String, skip: Int, first: Int, orderBy: LinkOrderByInput): Feed!
 }
 
@@ -20,14 +21,20 @@ type Feed {
 }
 
 type Mutation {
+  # Allows authenticated users to create a new link
   post(url: String!, description: String!): Link!
+  # Create an account for a new user
   signup(email: String!, password: String!, name: String!): AuthPayload
+  # Login an existing user 
   login(email: String!, password: String!): AuthPayload
+  # Allows authenticated users to vote for an existing link
   vote(linkId: ID!): Vote!
 }
 
 type Subscription {
+  # Receive realtime updates when a new link is created
   newLink: Link
+  # Receive realtime updates when a vote was submitted
   newVote: Vote
 }
 
