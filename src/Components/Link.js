@@ -48,7 +48,7 @@ class Link extends Component {
           )}
         </div>
         <div className="list-item-container-2">
-          <div>
+          <div className="description">
             {this.props.link.description} ({this.props.link.url})
           </div>
           <div className="f6 lh-copy gray">

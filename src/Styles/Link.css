@@ -13,5 +13,11 @@
 }
 .vote-arrow {
     color: #6A6A6A;
-    margin-top: 0.7rem;
+    margin-top: 0.75rem;
+}
+.list-item-container-2 {
+    font-family: 'Raleway', sans-serif;
+}
+.description {
+    font-size: 1.1rem;
 }
