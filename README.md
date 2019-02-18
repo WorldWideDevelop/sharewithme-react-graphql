@@ -1,5 +1,35 @@
 # Share With Me 
 
+## How to locally use the app
+1. Clone
+`git@github.com:halfundecided/sharewithme-react-graphql.git`
+
+2. Install dependencies and deploy the Prisma database API
+Run the following commands:
+```
+$ yarn global add prisma
+$ cd sharewithme-react-graphql/server
+$ yarn install
+$ prisma deploy
+```
+Select Demo server OR run Prisma locally via Docker
+
+3. Run the server 
+```
+$ cd sharewithme-react-graphql/server
+$ yarn start
+```
+
+4. Run the app
+In sharewithme-react-graphql directory,
+```
+$ yarn install
+$ yarn start
+```
+
+## Deployment with Heroku
+Coming soon!
+
 ## Features
 - [x] Display a list of links
 - [x] Search the list of links
