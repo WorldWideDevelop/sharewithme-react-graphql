@@ -1,0 +1,33 @@
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'PT Mono', monospace;
+    text-transform: uppercase;
+    padding: 1rem 1rem 1rem 1rem;
+    margin: 1rem 1rem 1rem 1rem;
+}
+
+.login-text {
+    font-size: 1.3rem;
+}
+
+.login-input {
+    display: flex;
+    flex-direction: column;
+    width: 20rem;
+    margin: 0 1rem 1.5rem 1rem;
+}
+
+.login-button {
+    margin: 0 0 0 0.5rem;
+    text-transform: uppercase;
+    font-family: 'PT Mono', monospace; 
+    background: none;
+	color: inherit;
+	padding: 0.1rem 0.1rem 0.1rem 0.3rem;
+	font: inherit;
+	cursor: pointer;
+    outline: inherit;
+    text-align: center;
+}
