@@ -3,6 +3,7 @@ import { Mutation } from 'react-apollo'
 import gql from 'graphql-tag'
 import { FEED_QUERY } from './LinkList'
 import { LINKS_PER_PAGE } from '../constants'
+import "../Styles/CreateLink.css"
 
 const POST_MUTATION = gql`
   mutation PostMutation($description: String!, $url: String!) {
@@ -24,17 +25,17 @@ class CreateLink extends Component {
     render() {
       const { description, url } = this.state
       return (
-        <div>
-          <div className="flex flex-column mt3">
+        <div className="share-container"> 
+          <div className="share-container-1">
             <input
-              className="mb2"
+              className="share-input-box"
               value={description}
               onChange={e => this.setState({ description: e.target.value })}
               type="text"
               placeholder="A description for the link"
             />
             <input
-              className="mb2"
+              className="share-input-box"
               value={url}
               onChange={e => this.setState({ url: e.target.value })}
               type="text"
@@ -61,7 +62,7 @@ class CreateLink extends Component {
               })
             }}
           >
-            {postMutation => <button onClick={postMutation}>Submit</button>}
+            {postMutation => <button onClick={postMutation} className="share-button">Let's Share!</button>}
           </Mutation>
         </div>
       )

@@ -24,7 +24,7 @@ class Header extends Component {
             {/* only loged in user: if authToken is not available */}
             {authToken && (
               <Link to="/create" className="submit">
-                submit
+                Share
               </Link>
             )}
           </div>
