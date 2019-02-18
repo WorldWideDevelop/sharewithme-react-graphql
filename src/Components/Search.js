@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { withApollo } from 'react-apollo'
 import gql from 'graphql-tag'
 import Link from './Link'
+import "../Styles/Search.css"
 
 const FEED_SEARCH_QUERY = gql`
   query FeedSearchQuery($filter: String!) {
@@ -35,13 +36,13 @@ class Search extends Component {
     render() {
         return (
             <div>
-                <div>
-                    Search
+                <div className="search-container">
+                    <div className="search-text">Search</div>
                     <input 
                         type='text'
                         onChange={e => this.setState({ filter: e.target.value })}
                         />
-                        <button onClick={() => this._executeSearch()}>OK</button>
+                        <button onClick={() => this._executeSearch()} className="search-button">Go!</button>
                 </div>
                 {this.state.links.map((link, index) => (
                     <Link key={link.id} link={link} index={index} />

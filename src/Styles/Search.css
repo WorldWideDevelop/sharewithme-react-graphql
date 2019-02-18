@@ -1,0 +1,23 @@
+.search-container {
+    text-transform: uppercase;
+    font-family: 'PT Mono', monospace;
+    font-size: 1.2rem;
+    color: #6A6A6A;
+    padding: 1rem 1rem 2rem 1rem;
+    display: flex;
+    justify-content: center;
+}
+.search-text {
+    margin: 0.2rem 1rem 0 0;
+}
+.search-button {
+    margin: 0 0 0 0.5rem;
+    text-transform: uppercase;
+    font-family: 'PT Mono', monospace; 
+    background: none;
+	color: inherit;
+	padding: 0.1rem 0.1rem 0.1rem 0.3rem;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}

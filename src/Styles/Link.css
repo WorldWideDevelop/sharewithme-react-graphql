@@ -9,7 +9,8 @@
 .number {
     color: #6A6A6A;
     font-family: 'Slabo 27px', serif;
-    padding: 0 0.5rem 0 0
+    padding: 0 0.5rem 0 0;
+    font-size: 1.1rem;
 }
 .vote-arrow {
     color: #6A6A6A;

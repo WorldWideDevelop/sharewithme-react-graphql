@@ -3,6 +3,7 @@ import Link from './Link'
 import { Query } from 'react-apollo'
 import gql from 'graphql-tag'
 import { LINKS_PER_PAGE } from '../constants'
+import "../Styles/LinkList.css"
 
 export const FEED_QUERY = gql`
   query FeedQuery($first: Int, $skip: Int, $orderBy: LinkOrderByInput) {
@@ -181,11 +182,11 @@ class LinkList extends Component {
                 />
               ))}
               {isNewPage && (
-                <div className="flex ml4 mv3 gray">
-                  <div className="pointer mr2" onClick={this._previousPage}>
+                <div className="previous-next">
+                  <div className="previous" onClick={this._previousPage}>
                     Previous
                   </div>
-                  <div className="pointer" onClick={() => this._nextPage(data)}>
+                  <div className="next" onClick={() => this._nextPage(data)}>
                     Next
                   </div>
                 </div>
