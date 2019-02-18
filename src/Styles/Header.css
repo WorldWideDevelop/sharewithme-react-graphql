@@ -13,6 +13,8 @@
 .logo {
     font-family: 'Major Mono Display', monospace;
     font-size: 2.5rem;
+    text-decoration: none;
+    color: black; 
 }
 .menu-2 {
     display: flex;

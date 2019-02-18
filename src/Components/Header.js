@@ -10,7 +10,7 @@ class Header extends Component {
     return (
       <div className="header">
         <div className="menu">
-          <div className="logo">Share With Me</div>
+          <Link to="/" className="logo">Share With Me</Link>
           <div className="menu-2">
             <Link to="/" className="new">
               new

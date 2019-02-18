@@ -1,4 +1,6 @@
 # Share With Me 
+Let's share useful links that a developer should visit!  
+![](./sharewithme.png)
 
 ## How to locally use the app
 1. Clone
