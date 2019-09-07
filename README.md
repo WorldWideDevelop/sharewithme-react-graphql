@@ -4,7 +4,7 @@ Let's share useful links that a developer should visit!
 
 ## How to locally use the app
 1. Clone
-`https://github.com/AdrianTan914/sharewithme-react-graphql`
+`git@github.com:halfundecided/sharewithme-react-graphql.git`
 
 2. Install dependencies and deploy the Prisma database API
 Run the following commands:
